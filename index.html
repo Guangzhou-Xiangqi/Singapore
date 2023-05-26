@@ -8,20 +8,34 @@
     <link href="style.css" rel="stylesheet" />
   </head>
   <body>
-    <h1>Welcome to my page</h1>
+    {% if authenticated %}
+      <h1>Welcome to my page</h1>
 
-    <p>Please view the following links for the SEA games</p>
+      <p>Please view the following links for the SEA games</p>
 
-    <ol>
-      <li>
-        <a href="第一轮.html" alt="Single R1"> Men Single Standard </a>
-      </li>
-      <li>
-        <a href="#" alt="Rapid R1"> Men Rapid Team </a>
-      </li>
-      <li>
-        <a href="#" alt="Blitz R1"> Men Blitz Team </a>
-      </li>
-    </ol>
+      <ol>
+        <li>
+          <a href="第一轮.html" alt="Single R1"> Men Single Standard </a>
+        </li>
+        <li>
+          <a href="#" alt="Rapid R1"> Men Rapid Team </a>
+        </li>
+        <li>
+          <a href="#" alt="Blitz R1"> Men Blitz Team </a>
+        </li>
+      </ol>
+    {% else %}
+      <h1>Login</h1>
+      {% if error %}
+        <p>Invalid username or password. Please try again.</p>
+      {% endif %}
+      <form action="/login" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <input type="submit" value="Login">
+      </form>
+    {% endif %}
   </body>
 </html>
