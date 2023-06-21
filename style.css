@@ -3,14 +3,28 @@ margin:0;
 padding:0;
 }
 
-h2,iframe{
-  padding: 50px 50px;
-  margin-bottom:50px;
-  margin-left: 100px;
+h2{
+  padding: 0 50px;
+  margin-left: 0;
+}
+
+ul{
+  margin-bottom; 30px;
+}
+
+a:link,visited{
+  color:black;
+}
+
+a:hover,active{
+  text-decoration:none;
+}
+iframe{
+  margin-top: 20px;
 }
 
 .container {
-  width:1200px;
+  width:900px;
   margin:0 auto;
 }
 
